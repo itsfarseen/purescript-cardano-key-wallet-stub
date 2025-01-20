@@ -11,7 +11,7 @@
     "dependencies": {
         "@mlabs-haskell/cardano-message-signing": "^1.0.1",
         "@mlabs-haskell/json-bigint": "^2.0.0",
-        "@mlabs-haskell/cardano-serialization-lib-gc": "^1.0.10"
+        "@mlabs-haskell/cardano-data-lite": "https://github.com/mlabs-haskell/cardano-data-lite.git#01274415829dc56d3b136b33c27d614a5e53e71f"
     },
     "devDependencies": {
         "doctoc": "^2.2.1"
