@@ -14,17 +14,11 @@ to generate this file without the comments in this block.
 , dependencies =
   [ "aeson"
   , "aff"
-  , "arrays"
-  , "cardano-collateral-select"
-  , "cardano-message-signing"
   , "cardano-types"
   , "console"
   , "effect"
-  , "either"
-  , "foldable-traversable"
   , "maybe"
   , "newtype"
-  , "ordered-collections"
   , "partial"
   , "prelude"
   ]

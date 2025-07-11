@@ -169,39 +169,6 @@ let additions =
         , repo = "https://github.com/mlabs-haskell/purescript-bytearrays"
         , version = "v1.0.0"
         }
-      , cardano-message-signing =
-        { dependencies =
-          [ "bytearrays"
-          , "cardano-types"
-          , "console"
-          , "effect"
-          , "newtype"
-          , "prelude"
-          ]
-        , repo =
-            "https://github.com/mlabs-haskell/purescript-cardano-message-signing"
-        , version = "698a0ca76c395a96c84c5955a92a0962e51904cb"
-        }
-      , cardano-collateral-select =
-        { dependencies =
-          [ "arrays"
-          , "cardano-types"
-          , "console"
-          , "effect"
-          , "exceptions"
-          , "foldable-traversable"
-          , "lists"
-          , "maybe"
-          , "newtype"
-          , "ordered-collections"
-          , "partial"
-          , "prelude"
-          , "tuples"
-          ]
-        , repo =
-            "https://github.com/mlabs-haskell/purescript-cardano-collateral-select"
-        , version = "fed22134275a4668d9458cbebba566667c4cafe0"
-        }
       , cardano-types =
         { dependencies =
           [ "aeson"
