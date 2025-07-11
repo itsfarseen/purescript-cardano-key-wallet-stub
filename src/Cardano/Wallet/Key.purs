@@ -1,5 +1,6 @@
 module Cardano.Wallet.Key
   ( KeyWallet(KeyWallet)
+  , DataSignature
   , PrivateDrepKey(PrivateDrepKey)
   , PrivatePaymentKey(PrivatePaymentKey)
   , PrivateStakeKey(PrivateStakeKey)
@@ -19,8 +20,9 @@ import Aeson
   , class EncodeAeson
   )
 import Cardano.Types.Address (Address)
-import Cardano.Types.Credential (Credential)
+import Cardano.Types.CborBytes (CborBytes)
 import Cardano.Types.Coin (Coin)
+import Cardano.Types.Credential (Credential)
 import Cardano.Types.Ed25519KeyHash (Ed25519KeyHash)
 import Cardano.Types.NetworkId (NetworkId)
 import Cardano.Types.PrivateKey (PrivateKey)
@@ -55,13 +57,19 @@ newtype KeyWallet = KeyWallet
       -- ^ UTxOs to select from
       -> Aff (Maybe (Array TransactionUnspentOutput))
   , signTx :: Transaction -> Aff TransactionWitnessSet
-  , signData :: Address -> RawBytes -> Aff (Maybe Unit)
+  , signData :: Address -> RawBytes -> Aff (Maybe DataSignature)
   , paymentKey :: Aff PrivatePaymentKey
   , stakeKey :: Aff (Maybe PrivateStakeKey)
   , drepKey :: Aff (Maybe PrivateDrepKey)
   }
 
 derive instance Newtype KeyWallet _
+
+type DataSignature =
+    { key :: CborBytes
+    , signature :: CborBytes
+    }
+
 
 newtype PrivatePaymentKey = PrivatePaymentKey PrivateKey
 
