@@ -17,7 +17,6 @@ import Prelude
 import Aeson
   ( class DecodeAeson
   , class EncodeAeson
-  , encodeAeson
   )
 import Cardano.Types.Address (Address)
 import Cardano.Types.Credential (Credential)
@@ -43,44 +42,44 @@ newtype KeyWallet = KeyWallet Unit
 
 derive instance Newtype KeyWallet _
 
-newtype PrivatePaymentKey = PrivatePaymentKey Unit
+newtype PrivatePaymentKey = PrivatePaymentKey PrivateKey
 
 derive instance Newtype PrivatePaymentKey _
 
 instance Show PrivatePaymentKey where
-  show _ = "(PrivatePaymentKey Unit)"
+  show _ = "(PrivatePaymentKey <hidden>)"
 
 instance EncodeAeson PrivatePaymentKey where
-  encodeAeson (PrivatePaymentKey _) = encodeAeson 0
+  encodeAeson (PrivatePaymentKey _) = unsafeCrashWith "not implemented"
 
 instance DecodeAeson PrivatePaymentKey where
-  decodeAeson _ = pure $ PrivatePaymentKey unit
+  decodeAeson _ = unsafeCrashWith "not implemented"
 
-newtype PrivateStakeKey = PrivateStakeKey Unit
+newtype PrivateStakeKey = PrivateStakeKey PrivateKey
 
 derive instance Newtype PrivateStakeKey _
 
 instance Show PrivateStakeKey where
-  show _ = "(PrivateStakeKey Unit)"
+  show _ = "(PrivateStakeKey <hidden>)"
 
 instance EncodeAeson PrivateStakeKey where
-  encodeAeson (PrivateStakeKey _) = encodeAeson 0
+  encodeAeson (PrivateStakeKey _) = unsafeCrashWith "not implemented"
 
 instance DecodeAeson PrivateStakeKey where
-  decodeAeson _ = pure $ PrivateStakeKey unit
+  decodeAeson _ = unsafeCrashWith "not implemented"
 
-newtype PrivateDrepKey = PrivateDrepKey Unit
+newtype PrivateDrepKey = PrivateDrepKey PrivateKey
 
 derive instance Newtype PrivateDrepKey _
 
 instance Show PrivateDrepKey where
-  show _ = "(PrivateDrepKey Unit)"
+  show _ = "(PrivateDrepKey <hidden>)"
 
 instance EncodeAeson PrivateDrepKey where
-  encodeAeson (PrivateDrepKey _) = encodeAeson 0
+  encodeAeson (PrivateDrepKey _) = unsafeCrashWith "not implemented"
 
 instance DecodeAeson PrivateDrepKey where
-  decodeAeson _ = pure $ PrivateDrepKey unit
+  decodeAeson _ = unsafeCrashWith "not implemented"
 
 privateKeyToPkh :: forall t. Newtype t PrivateKey => t -> Ed25519KeyHash
 privateKeyToPkh _ = unsafeCrashWith "privateKeyToPkh: not implemented"
