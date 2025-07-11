@@ -1,37 +1,5 @@
-# purescript-cardano-key-wallet
+# purescript-cardano-key-wallet-stub
 
-Provides a common interface for wallet operations:
+This is a stub version of [purescript-cardano-key-wallet](https://github.com/mlabs-haskell/purescript-cardano-key-wallet).
 
-```purescript
-newtype KeyWallet = KeyWallet
-  { address :: NetworkId -> Aff Address
-  , selectCollateral ::
-      Coin
-      -> Int
-      -> UtxoMap
-      -> Aff (Maybe (Array TransactionUnspentOutput))
-  , signTx :: Transaction -> Aff TransactionWitnessSet
-  , signData :: NetworkId -> RawBytes -> Aff DataSignature
-  , paymentKey :: Aff PrivatePaymentKey
-  , stakeKey :: Aff (Maybe PrivateStakeKey)
-  , drepKey :: Aff PrivateDrepKey
-  }
-```
-
-This interface is used in [`cardano-transaction-lib`](https://github.com/Plutonomicon/cardano-transaction-lib) to encapsulate private keys.
-
-It can be used to provide signing services remotely (note the `Aff`) without revealing the private keys.
-
-To create a `KeyWallet` from private key(s), use this function:
-
-```purescript
-Cardano.Wallet.Key.privateKeysToKeyWallet
-  :: PrivatePaymentKey
-  -> Maybe PrivateStakeKey
-  -> PrivateDrepKey
-  -> KeyWallet
-```
-
-## Test coverage
-
-CTL's test suite uses `KeyWallet` to run every contract.
+This package can be used as a replacement for purescript-cardano-key-wallet if you need to avoid bundling Cardano Message Signing WASM blob when bundling CTL. 
