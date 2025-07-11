@@ -7,11 +7,11 @@ let
 
     "aeson" = pkgs.stdenv.mkDerivation {
         name = "aeson";
-        version = "v2.0.0";
+        version = "v2.0.1";
         src = pkgs.fetchgit {
           url = "https://github.com/mlabs-haskell/purescript-aeson.git";
-          rev = "4fddd518a143de563299d484272a0ef18daa7dcd";
-          sha256 = "1bz1z9l6nwf5yk45sbbjllmqvci0n1l92cvk3lgmni19g9silbrl";
+          rev = "ac674dda5cf58c6544cb361a208bced4d06ee93a";
+          sha256 = "1zx7d96rz86axqz8n28j5d4lkgx48via0nw9c7xid1z1pz215zsd";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -175,7 +175,7 @@ let
 
     "cardano-plutus-data-schema" = pkgs.stdenv.mkDerivation {
         name = "cardano-plutus-data-schema";
-        version = "eb0bb78927c50c4bee364e932c9fa8cf94546191";
+        version = "v1.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/mlabs-haskell/purescript-cardano-plutus-data-schema";
           rev = "eb0bb78927c50c4bee364e932c9fa8cf94546191";
@@ -187,9 +187,9 @@ let
 
     "cardano-types" = pkgs.stdenv.mkDerivation {
         name = "cardano-types";
-        version = "348fbbefa8bec5050e8492f5a9201ac5bb17c9d9";
+        version = "v5.0.0";
         src = pkgs.fetchgit {
-          url = "https://github.com/mlabs-haskell/purescript-cardano-types";
+          url = "https://github.com/mlabs-haskell/purescript-cardano-types.git";
           rev = "348fbbefa8bec5050e8492f5a9201ac5bb17c9d9";
           sha256 = "06977niflqdpk4kw6d3480ak0m2rwi9fngjblxnqddqpdyj6zq1d";
         };
@@ -607,11 +607,11 @@ let
 
     "mote" = pkgs.stdenv.mkDerivation {
         name = "mote";
-        version = "v3.0.0";
+        version = "v1.1.0";
         src = pkgs.fetchgit {
-          url = "https://github.com/garyb/purescript-mote.git";
-          rev = "3306aa32753cd345ca41b058b26584fe890ac895";
-          sha256 = "11vwbvxylvyfghmz7616727vrq20qcmz7d61y9lyq550q0bkg0np";
+          url = "https://github.com/garyb/purescript-mote";
+          rev = "29aea4ad7b013d50b42629c87b01cf0202451abd";
+          sha256 = "00nckcd7w4djx9jh1hmg0fma55k6k7cw6pdcb96w107gykxgv5r7";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
@@ -619,11 +619,11 @@ let
 
     "mote-testplan" = pkgs.stdenv.mkDerivation {
         name = "mote-testplan";
-        version = "d1c93e08ef09f5427b460f396b89da7255f8af52";
+        version = "v1.0.0";
         src = pkgs.fetchgit {
           url = "https://github.com/mlabs-haskell/purescript-mote-testplan";
-          rev = "d1c93e08ef09f5427b460f396b89da7255f8af52";
-          sha256 = "1317v612hq1hlw3m6vvzjfpg3vzm4pdlpix6z4z221cpgaga4i2r";
+          rev = "3d56986a32134fbd675e42ef6b6f55dc91ad678a";
+          sha256 = "11vivzi1bs9mc8hx4v4zarb9r7x47zm6m6z1xvcn228m7lr69csy";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
